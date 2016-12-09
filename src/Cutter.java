@@ -19,7 +19,7 @@ public class Cutter extends Product {
                 ", blade=" + blade +
                 "} " ;
     }
-
+    
     public String getColourOfBody() {
         return colourOfBody;
     }
