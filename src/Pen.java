@@ -11,14 +11,14 @@ public class Pen extends Product {
 
     }
 
-    public Pen(double weith, int count, int countOfPivotes, double width, String type, String ...colors) {
-        super(weith, count);
+    public Pen(int count, double priceOfOne, int countOfPivotes, double width, String type, String ...colors) {
+        super(count, priceOfOne);
         this.countOfPivotes = countOfPivotes;
-        Pivotes = new PivotForPen[countOfPivotes];
+        this.Pivotes = new PivotForPen[countOfPivotes];
         int i =0;
         for (String color: colors){
             PivotForPen pivot = new PivotForPen(color, width,type);
-            Pivotes[i] = pivot;
+            this.Pivotes[i] = pivot;
             i++;
         }
     }
@@ -26,10 +26,8 @@ public class Pen extends Product {
 
     @Override
     public String toString() {
-        return "Pen{" + "weith = "+
-                super.getWeith()+", productCount = "+
-                super.getCount()+
-                ", countOfPivotes=" + countOfPivotes +
+        return "Pen{" + super.toString()+
+                " countOfPivotes=" + countOfPivotes +
                 ", Pivotes=" + Arrays.toString(Pivotes) +
                 "} ";
     }

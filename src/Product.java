@@ -2,31 +2,40 @@
  * Created by Daria Serebryakova on 09.12.2016.
  */
 public class Product {
-    private double weith;
+
     private int count;
+    private double priceOfOne;
 
     public Product() {
     }
 
-    public Product(double weith, int count) {
-        this.weith = weith;
+    public Product( int count, double priceOfOne) {
         this.count = count;
+        this.priceOfOne = priceOfOne;
     }
 
-    public double getWeith() {
-        return weith;
+    @Override
+    public String toString() {
+        return "Product{" +
+                "count=" + count +
+                ", priceOfOne=" + priceOfOne +
+                '}';
     }
 
     public int getCount() {
         return count;
     }
 
-    public void setWeith(double weith) {
-        this.weith = weith;
-    }
-
     public void setCount(int count) {
         this.count = count;
+    }
+
+    public double getpriceOfOne() {
+        return priceOfOne;
+    }
+
+    public void setpriceOfOne(double priceOfOne) {
+        this.priceOfOne = priceOfOne;
     }
 }
 
