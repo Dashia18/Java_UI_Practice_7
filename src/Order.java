@@ -1,5 +1,5 @@
 import java.util.LinkedList;
-
+import java.util.Iterator;
 /**
  * Created by Daria Serebryakova on 09.12.2016.
  */
@@ -22,5 +22,16 @@ public class Order {
                 ", client=" + client +
                 ", products=" + products +
                 '}';
+    }
+
+
+
+
+    public String getOrderString() {
+
+        return "" + numberOfOrder + " "+
+                client.getName() +" "+client.getDiscount()+
+                 products;
+
     }
 }

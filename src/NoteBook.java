@@ -3,7 +3,7 @@
  */
 public class NoteBook extends Product {
     private String format = "A5";
-    private String coverColor = "Yellow";
+    private String coverColour = "Yellow";
     private String typeOfSheets = "line";
     private int countOfSheets = 96;
 
@@ -13,7 +13,7 @@ public class NoteBook extends Product {
     public NoteBook(int count, double priceOfOne, String format, String coverColor, String typeOfSheets, int countOfSheets) {
         super(count, priceOfOne);
         this.format = format;
-        this.coverColor = coverColor;
+        this.coverColour = coverColor;
         this.typeOfSheets = typeOfSheets;
         this.countOfSheets = countOfSheets;
     }
@@ -23,7 +23,7 @@ public class NoteBook extends Product {
         return "NoteBook{" +
                 super.toString()+
                 " format='" + format + '\'' +
-                ", coverColor='" + coverColor + '\'' +
+                ", coverColour='" + coverColour + '\'' +
                 ", typeOfSheets='" + typeOfSheets + '\'' +
                 ", countOfSheets=" + countOfSheets +
                 "} ";
@@ -34,7 +34,7 @@ public class NoteBook extends Product {
     }
 
     public String getCoverColor() {
-        return coverColor;
+        return coverColour;
     }
 
     public String getTypeOfSheets() {
@@ -50,7 +50,7 @@ public class NoteBook extends Product {
     }
 
     public void setCoverColor(String coverColor) {
-        this.coverColor = coverColor;
+        this.coverColour = coverColor;
     }
 
     public void setTypeOfSheets(String typeOfSheets) {

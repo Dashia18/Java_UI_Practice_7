@@ -1,0 +1,1 @@
+2 Ivanov O.P 5.0[Pen{{Product{count=2, priceOfOne=25.0} countOfPivotes=1, Pivotes=[PivotForPen{color='red', width=0.5, type='Gel']} , NoteBook{{Product{count=2, priceOfOne=60.0} format='A5', coverColour='Yellow', typeOfSheets='line', countOfSheets=96} , Cutter{{Product{count=1, priceOfOne=44.68}colourOfBody='Yellow', blade=BladeForCutter{material='steel'}} ]

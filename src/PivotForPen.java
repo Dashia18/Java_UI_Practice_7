@@ -45,7 +45,6 @@ public class PivotForPen {
         return "PivotForPen{" +
                 "color='" + color + '\'' +
                 ", width=" + width +
-                ", type='" + type + '\'' +
-                '}';
+                ", type='" + type + '\'';
     }
 }

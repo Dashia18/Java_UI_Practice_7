@@ -16,7 +16,7 @@ public class Product {
 
     @Override
     public String toString() {
-        return "Product{" +
+        return "{Product{" +
                 "count=" + count +
                 ", priceOfOne=" + priceOfOne +
                 '}';
