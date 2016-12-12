@@ -1,2 +1,4 @@
 Ivanov O.P  5.0
-Petrov A.P  7.0
+Anisimova A.P  7.0
+Romanova U.R  5.0
+Pushkin A.S  7.0

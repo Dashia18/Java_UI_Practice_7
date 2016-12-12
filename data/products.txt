@@ -1,3 +1,5 @@
 'Pen' 2 25.0  1 ['PivotForPen' 'red' 0.5 'Gel']
 'Pen' 2 25.0  1 ['PivotForPen' 'blue' 0.5 'Gel']
 'NoteBook' 2 60.0  'A5' Yellow' line' 96
+'Cutter' 1 38.0 'Black' 'BladeForCutter' 'steel'
+'Pen' 2 25.0  3 ['PivotForPen' 'red' 0.5 'Gel', 'PivotForPen' 'blue' 0.5 'Gel', 'PivotForPen' 'green' 0.5 'Gel']
