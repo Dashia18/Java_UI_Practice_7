@@ -14,7 +14,7 @@ public class Mian {
         LinkedList<Order> orders = CollectOrder.orderCollecter();
 
         ScanTxt.txtScaner("data\\clients.txt");
-        
+
 
 
 
