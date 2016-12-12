@@ -1,5 +1,10 @@
+package savaAndCollect;
+
+import stationeryShop.*;
+
 import java.util.Iterator;
 import java.util.LinkedList;
+
 
 /**
  * Created by Daria Serebryakova on 09.12.2016.
@@ -9,7 +14,7 @@ public class CollectOrder {
     public static LinkedList<Product> orderCollecter(){
 
         Product product1 = new Pen(2,25.0,1,0.5,"Gel", "red");
-//        Product product2 = new Pen(1,50.7,3,0.5,"Ball", "red","blue", "black");
+//        stationeryShop.Product product2 = new stationeryShop.Pen(1,50.7,3,0.5,"Ball", "red","blue", "black");
         Product product3 = new NoteBook(2, 60, "A5", "Yellow", "line", 96);
         Product product4 = new Cutter(1, 44.68, "Yellow","steel");
 

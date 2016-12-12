@@ -1,3 +1,5 @@
+package stationeryShop;
+
 /**
  * Created by Daria Serebryakova on 09.12.2016.
  */
@@ -31,9 +33,7 @@ public class Client {
 
     @Override
     public String toString() {
-        return "Client{" +
-                "name='" + name + '\'' +
-                ", discount=" + discount +
-                '}';
+        return name + ' ' +
+                " " + discount;
     }
 }

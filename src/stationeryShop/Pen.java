@@ -1,3 +1,5 @@
+package stationeryShop;
+
 import java.util.Arrays;
 
 /**
@@ -5,6 +7,7 @@ import java.util.Arrays;
  */
 public class Pen extends Product {
     private int countOfPivotes;
+    private String type = "Pen";
     private PivotForPen[] Pivotes;
 
     public Pen() {
@@ -26,10 +29,9 @@ public class Pen extends Product {
 
     @Override
     public String toString() {
-        return "Pen{" + super.toString()+
-                " countOfPivotes=" + countOfPivotes +
-                ", Pivotes=" + Arrays.toString(Pivotes) +
-                "} ";
+        return '\''+type+'\'' + super.toString()+
+                "  " + countOfPivotes +
+                " " + Arrays.toString(Pivotes);
     }
 
 }

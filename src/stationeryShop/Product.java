@@ -1,3 +1,5 @@
+package stationeryShop;
+
 /**
  * Created by Daria Serebryakova on 09.12.2016.
  */
@@ -16,10 +18,9 @@ public class Product {
 
     @Override
     public String toString() {
-        return "{Product{" +
-                "count=" + count +
-                ", priceOfOne=" + priceOfOne +
-                '}';
+        return "" +
+                " " + count +
+                " " + priceOfOne;
     }
 
     public int getCount() {

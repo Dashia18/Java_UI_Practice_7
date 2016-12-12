@@ -1,0 +1,2 @@
+2 Ivanov O.P  5.0 ['Pen' 2 25.0  1 ['PivotForPen' 'red' 0.5 'Gel'], 'Pen' 2 25.0  1 ['PivotForPen' 'blue' 0.5 'Gel']]
+2 Petrov A.P  7.0 ['NoteBook' 2 60.0  'A5' Yellow' line' 96]

@@ -1,19 +1,22 @@
+package stationeryShop;
+
 /**
  * Created by Daria Serebryakova on 09.12.2016.
  */
 public class PivotForPen {
     private String color = "blue";
     private double width = 0.5;
-    private String type = "Gel";
+    private String pivotForPenType = "Gel";
+    private String type = "PivotForPen";
 
     public PivotForPen() {
 
     }
 
-    public PivotForPen(String color, double width, String type) {
+    public PivotForPen(String color, double width, String pivotForPenType) {
         this.color = color;
         this.width = width;
-        this.type = type;
+        this.pivotForPenType = pivotForPenType;
     }
 
     public String getColor() {
@@ -25,7 +28,7 @@ public class PivotForPen {
     }
 
     public String getType() {
-        return type;
+        return pivotForPenType;
     }
 
     public void setColor(String color) {
@@ -36,15 +39,15 @@ public class PivotForPen {
         this.width = width;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public void setType(String pivotForPenType) {
+        this.pivotForPenType = pivotForPenType;
     }
 
     @Override
     public String toString() {
-        return "PivotForPen{" +
-                "color='" + color + '\'' +
-                ", width=" + width +
-                ", type='" + type + '\'';
+        return '\''+type +'\''+
+                " '" + color + '\'' +
+                " " + width +
+                " '" + pivotForPenType + '\'';
     }
 }

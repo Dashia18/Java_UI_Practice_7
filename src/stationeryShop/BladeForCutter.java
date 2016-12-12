@@ -1,8 +1,11 @@
+package stationeryShop;
+
 /**
  * Created by Daria Serebryakova on 09.12.2016.
  */
 public class BladeForCutter {
     private String material="steel";
+    private String type = "BladeForCutter";
 
     public BladeForCutter() {
     }
@@ -13,9 +16,8 @@ public class BladeForCutter {
 
     @Override
     public String toString() {
-        return "BladeForCutter{" +
-                "material='" + material + '\'' +
-                '}';
+        return '\''+type +'\''+
+                " '" + material + '\'';
     }
 
     public String getMaterial() {

@@ -1,3 +1,5 @@
+package stationeryShop;
+
 /**
  * Created by Daria Serebryakova on 09.12.2016.
  */
@@ -5,6 +7,7 @@ public class Cutter extends Product {
 
     private String colourOfBody = "Yellow";
     private BladeForCutter blade;
+    private String type = "Cutter";
 
     public Cutter(int count, double priceOfOne, String colourOfBody,String material) {
         super(count, priceOfOne);
@@ -14,12 +17,11 @@ public class Cutter extends Product {
 
     @Override
     public String toString() {
-        return "Cutter{" + super.toString()+
-                "colourOfBody='" + colourOfBody + '\'' +
-                ", blade=" + blade +
-                "} " ;
+        return '\''+type+'\'' + super.toString()+
+                " '" + colourOfBody + '\'' +
+                " " + blade ;
     }
-    
+
     public String getColourOfBody() {
         return colourOfBody;
     }

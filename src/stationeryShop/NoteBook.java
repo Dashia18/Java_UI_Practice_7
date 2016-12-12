@@ -1,3 +1,5 @@
+package stationeryShop;
+
 /**
  * Created by Daria Serebryakova on 09.12.2016.
  */
@@ -6,6 +8,7 @@ public class NoteBook extends Product {
     private String coverColour = "Yellow";
     private String typeOfSheets = "line";
     private int countOfSheets = 96;
+    private String type = "NoteBook";
 
     public NoteBook() {
     }
@@ -20,13 +23,12 @@ public class NoteBook extends Product {
 
     @Override
     public String toString() {
-        return "NoteBook{" +
+        return '\''+type +'\''+
                 super.toString()+
-                " format='" + format + '\'' +
-                ", coverColour='" + coverColour + '\'' +
-                ", typeOfSheets='" + typeOfSheets + '\'' +
-                ", countOfSheets=" + countOfSheets +
-                "} ";
+                "  '" + format + '\'' +
+                " " + coverColour + '\'' +
+                " " + typeOfSheets + '\'' +
+                " " + countOfSheets;
     }
 
     public String getFormat() {
