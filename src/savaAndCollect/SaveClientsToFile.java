@@ -12,7 +12,7 @@ public class SaveClientsToFile {
     public static void saveToFile(LinkedList<Client> clients) {
         Writer writer = null;
         try {
-            writer = new PrintWriter(new OutputStreamWriter(new FileOutputStream("clients.txt"), "UTF-8"));
+            writer = new PrintWriter(new OutputStreamWriter(new FileOutputStream("data\\clients.txt"), "UTF-8"));
 
 
             Iterator<Client> iter = clients.iterator();

@@ -13,7 +13,7 @@ public class SaveOrderToFile {
     public static void saveToFile(LinkedList<Order> orders) {
         Writer writer = null;
         try {
-            writer = new PrintWriter(new OutputStreamWriter(new FileOutputStream("orders.txt"), "UTF-8"));
+            writer = new PrintWriter(new OutputStreamWriter(new FileOutputStream("data\\orders.txt"), "UTF-8"));
 
 
             Iterator<Order> iter = orders.iterator();

@@ -14,7 +14,7 @@ public class SaveProductsToFile {
     public static void saveToFile(LinkedList<LinkedList<Product>> products) {
         Writer writer = null;
         try {
-            writer = new PrintWriter(new OutputStreamWriter(new FileOutputStream("products.txt"), "UTF-8"));
+            writer = new PrintWriter(new OutputStreamWriter(new FileOutputStream("data\\products.txt"), "UTF-8"));
 
 
             Iterator<LinkedList<Product>> iter1 = products.iterator();
