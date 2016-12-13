@@ -20,7 +20,7 @@ public class CollectOrder {
         clients.add(client2);
         clients.add(client3);
         clients.add(client4);
-        SaveToFile.saveClientToFile(clients);
+        SaveToFile.saveToFile(clients, "data\\clients.txt");
 
         //Products for clients
         LinkedList<Product> products1 = new LinkedList<>();
@@ -52,7 +52,7 @@ public class CollectOrder {
         orders.add(order2);
         orders.add(order3);
         orders.add(order4);
-        SaveToFile.saveOrderToFile(orders);
+        SaveToFile.saveToFile(orders,"data\\orders.txt");
 
 //        for(Order order : orders){
 //            System.out.println(order);

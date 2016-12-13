@@ -9,22 +9,21 @@ import java.util.LinkedList;
  */
 public class SaveToFile {
 
-    public static void saveClientToFile(LinkedList<Client> clients) {
+    public static void saveToFile(LinkedList<?> clients, String path) {//Wildcard
         Writer writer = null;
         try {
-            writer = new PrintWriter(new OutputStreamWriter(new FileOutputStream("data\\clients.txt"), "UTF-8"));
+            writer = new PrintWriter(new OutputStreamWriter(new FileOutputStream(path), "UTF-8"));
 
-            for (Client client:  clients) {
-                writer.append(client.toString() + "\r\n");
-
+            for (Object o:  clients) {
+                writer.append(o.toString() + "\r\n");
             }
             writer.flush();
 
         } catch (IOException ex) {
             ex.printStackTrace();
         }
-    }
 
+    }
     public static void saveProductToFile(LinkedList<LinkedList<Product>> products) {
         Writer writer = null;
         try {
@@ -47,19 +46,5 @@ public class SaveToFile {
         }
     }
 
-    public static void saveOrderToFile(LinkedList<Order> orders) {
-        Writer writer = null;
-        try {
-            writer = new PrintWriter(new OutputStreamWriter(new FileOutputStream("data\\orders.txt"), "UTF-8"));
 
-            for (Order order:  orders) {
-                writer.append(order.toString() + "\r\n");
-
-            }
-            writer.flush();
-
-        } catch (IOException ex) {
-            ex.printStackTrace();
-        }
-    }
 }

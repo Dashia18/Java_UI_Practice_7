@@ -1,9 +1,9 @@
 import savaCollectScan.CollectOrder;
-import savaCollectScan.ScanTxt;
+import savaCollectScan.ScanFromConsole;
+import savaCollectScan.ScanFromTxt;
 import stationeryShop.*;
 import java.util.LinkedList;
-import java.util.Scanner;
-import java.io.File;
+
 /**
  * Created by Daria Serebryakova on 09.12.2016.
  */
@@ -13,7 +13,12 @@ public class Mian {
 
         LinkedList<Order> orders = CollectOrder.orderCollecter();
 
-        ScanTxt.txtScaner("data\\clients.txt");
+        ScanFromTxt.txtScaner("data\\clients.txt");
+
+        String dataConsole;
+        dataConsole = ScanFromConsole.consoleScaner();
+            System.out.println(dataConsole);
+
 
 
 
