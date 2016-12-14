@@ -10,10 +10,10 @@ public class CollectOrder {
     public static LinkedList<Order> orderCollecter(){
 
         //Clients
-        Client client1 = new Client("Ivanov O.P", 5);
-        Client client2 = new Client("Anisimova A.P", 7);
-        Client client3 = new Client("Romanova U.R", 5);
-        Client client4 = new Client("Pushkin A.S", 7);
+        Client client1 = new Client("Ivanov O.P.", 5);
+        Client client2 = new Client("Anisimova A.P.", 7);
+        Client client3 = new Client("Romanova U.R.", 5);
+        Client client4 = new Client("Pushkin A.S.", 7);
 
         LinkedList<Client> clients = new LinkedList<>();
         clients.add(client1);

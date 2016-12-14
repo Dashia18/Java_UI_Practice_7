@@ -1,7 +1,13 @@
 import savaCollectScan.CollectOrder;
-import savaCollectScan.ScanFromConsole;
-import savaCollectScan.ScanFromTxt;
+import savaCollectScan.DiscountChange;
+import savaCollectScan.MyScanner;
+import savaCollectScan.SaveToFile;
 import stationeryShop.*;
+
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.LinkedList;
 
 /**
@@ -11,15 +17,28 @@ public class Mian {
 
     public static void main(String[] args) {
 
-        LinkedList<Order> orders = CollectOrder.orderCollecter();
+//        LinkedList<Order> orders = CollectOrder.orderCollecter();
 
-        ScanFromTxt.txtScaner("data\\clients.txt");
+        //3a
+//        System.out.println("Insert the path:");
+//        String dataConsole;
+//        dataConsole = MyScanner.consoleScanner();//data\\clients.txt
+//        MyScanner.txtScanner(dataConsole);
 
-        String dataConsole;
-        dataConsole = ScanFromConsole.consoleScaner();
-            System.out.println(dataConsole);
+        //3b
+//        System.out.println("Insert the path:");
+//        String path = MyScanner.consoleScanner();//"data\\clients.txt"
+//        System.out.println("Insert object data to add:");
+//        String object = MyScanner.consoleScanner();//"Kozlov A.G. 3.0"
+//        SaveToFile.addToFile(path,object);
 
+        //3c
 
+//        System.out.println("Insert object name to change (Secondname F.M. - format):");
+//        String object = MyScanner.consoleScanner();//"Kozlov A.G."
+//        System.out.println("Insert new discount:");
+//        String discount = MyScanner.consoleScanner();//"12.0"
+        DiscountChange.chageDiscount("data\\clients.txt", "Anisimova A.P.", "2.0");
 
 
 

@@ -33,7 +33,7 @@ public class Client {
 
     @Override
     public String toString() {
-        return name + ' ' +
+        return name +
                 " " + discount;
     }
 }

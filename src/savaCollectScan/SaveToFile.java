@@ -47,4 +47,44 @@ public class SaveToFile {
     }
 
 
+    public static void addToFile(String path, String data) {
+
+        FileWriter fileWriter = null;
+        boolean isAdd = true;
+        try {
+            fileWriter = new FileWriter(new File(path),true);
+            fileWriter.write(data + "\n");
+            fileWriter.flush();
+        } catch (IOException e) {
+            isAdd = false;
+            e.printStackTrace();
+        }
+        if(isAdd){
+            System.out.println("Object \"" + data + "\" add");
+        }
+    }
+    public static void changeFile(String path, String data) {
+
+
+
+
+
+
+
+
+        FileInputStream fileInput = null;
+        boolean isChange = true;
+
+        try {
+
+            fileInput = new FileInputStream(new File(path));
+
+        } catch (IOException e) {
+            isChange = false;
+            e.printStackTrace();
+        }
+        if(isChange){
+            System.out.println("Object \"" + data + "\" change");
+        }
+    }
 }
