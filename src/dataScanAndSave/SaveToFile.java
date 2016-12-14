@@ -1,4 +1,4 @@
-package savaCollectScan;
+package dataScanAndSave;
 import stationeryShop.*;
 import java.io.*;
 import java.util.Iterator;
@@ -9,7 +9,8 @@ import java.util.LinkedList;
  */
 public class SaveToFile {
 
-    public static void saveToFile(LinkedList<?> clients, String path) {//Wildcard
+    //methods for stationary Shop
+    public static void saveListToFile(LinkedList<?> clients, String path) {//Wildcard
         Writer writer = null;
         try {
             writer = new PrintWriter(new OutputStreamWriter(new FileOutputStream(path), "UTF-8"));
@@ -47,6 +48,20 @@ public class SaveToFile {
     }
 
 
+    //methods for work with file
+    public static void saveToFile(String path, String finalStr) {
+        FileWriter fw = null;
+        File file = new File(path);
+
+        try {
+            fw = new FileWriter(file);
+            BufferedWriter bw = new BufferedWriter(fw);
+            bw.write(finalStr);
+            bw.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
     public static void addToFile(String path, String data) {
 
         FileWriter fileWriter = null;
@@ -64,13 +79,6 @@ public class SaveToFile {
         }
     }
     public static void changeFile(String path, String data) {
-
-
-
-
-
-
-
 
         FileInputStream fileInput = null;
         boolean isChange = true;
