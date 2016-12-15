@@ -23,11 +23,11 @@ public class NoteBook extends Product {
 
     @Override
     public String toString() {
-        return '\''+type +'\''+
+        return  type +" " +
                 super.toString()+
-                "  '" + format + '\'' +
-                " " + coverColour + '\'' +
-                " " + typeOfSheets + '\'' +
+                " " + format +
+                " " + coverColour +
+                " " + typeOfSheets +
                 " " + countOfSheets;
     }
 

@@ -18,8 +18,7 @@ public class Product {
 
     @Override
     public String toString() {
-        return "" +
-                " " + count +
+        return count +
                 " " + priceOfOne;
     }
 

@@ -45,9 +45,9 @@ public class PivotForPen {
 
     @Override
     public String toString() {
-        return '\''+type +'\''+
-                " '" + color + '\'' +
+        return type +
+                " " + color +
                 " " + width +
-                " '" + pivotForPenType + '\'';
+                " " + pivotForPenType;
     }
 }

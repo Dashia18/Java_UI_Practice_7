@@ -17,8 +17,8 @@ public class Cutter extends Product {
 
     @Override
     public String toString() {
-        return '\''+type+'\'' + super.toString()+
-                " '" + colourOfBody + '\'' +
+        return type + super.toString()+
+                " " + colourOfBody +
                 " " + blade ;
     }
 

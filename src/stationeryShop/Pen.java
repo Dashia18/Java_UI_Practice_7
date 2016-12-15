@@ -29,8 +29,8 @@ public class Pen extends Product {
 
     @Override
     public String toString() {
-        return '\''+type+'\'' + super.toString()+
-                "  " + countOfPivotes +
+        return type + super.toString()+
+                " " + countOfPivotes +
                 " " + Arrays.toString(Pivotes);
     }
 

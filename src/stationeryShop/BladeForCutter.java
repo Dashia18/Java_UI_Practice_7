@@ -16,8 +16,8 @@ public class BladeForCutter {
 
     @Override
     public String toString() {
-        return '\''+type +'\''+
-                " '" + material + '\'';
+        return type +
+                " " + material;
     }
 
     public String getMaterial() {

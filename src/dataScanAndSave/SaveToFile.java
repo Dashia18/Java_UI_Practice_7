@@ -52,6 +52,7 @@ public class SaveToFile {
     public static void saveToFile(String path, String finalStr) {
         FileWriter fw = null;
         File file = new File(path);
+        boolean isSave = true;
 
         try {
             fw = new FileWriter(file);
@@ -59,7 +60,11 @@ public class SaveToFile {
             bw.write(finalStr);
             bw.close();
         } catch (IOException e) {
+            isSave = false;
             e.printStackTrace();
+        }
+        if(isSave){
+            System.out.println("Data saved");
         }
     }
     public static void addToFile(String path, String data) {
