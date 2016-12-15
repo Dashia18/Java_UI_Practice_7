@@ -9,45 +9,6 @@ import java.util.LinkedList;
  */
 public class SaveToFile {
 
-    //methods for stationary Shop
-    public static void saveListToFile(LinkedList<?> clients, String path) {//Wildcard
-        Writer writer = null;
-        try {
-            writer = new PrintWriter(new OutputStreamWriter(new FileOutputStream(path), "UTF-8"));
-
-            for (Object o:  clients) {
-                writer.append(o.toString() + "\r\n");
-            }
-            writer.flush();
-
-        } catch (IOException ex) {
-            ex.printStackTrace();
-        }
-
-    }
-    public static void saveProductToFile(LinkedList<LinkedList<Product>> products) {
-        Writer writer = null;
-        try {
-            writer = new PrintWriter(new OutputStreamWriter(new FileOutputStream("data\\products.txt"), "UTF-8"));
-
-
-            Iterator<LinkedList<Product>> iter1 = products.iterator();
-            while(iter1.hasNext()){
-
-                Iterator<Product> iter2 = iter1.next().iterator();
-                while(iter2.hasNext()){
-                    writer.append(iter2.next().toString() + "\r\n");
-                }
-
-            }
-            writer.flush();
-
-        } catch (IOException ex) {
-            ex.printStackTrace();
-        }
-    }
-
-
     //methods for work with file
     public static void saveToFile(String path, String finalStr) {
         FileWriter fw = null;
@@ -98,6 +59,45 @@ public class SaveToFile {
         }
         if(isChange){
             System.out.println("Object \"" + data + "\" change");
+        }
+    }
+
+
+    //methods for stationary Shop
+    public static void saveListToFile(LinkedList<?> clients, String path) {//Wildcard
+        Writer writer = null;
+        try {
+            writer = new PrintWriter(new OutputStreamWriter(new FileOutputStream(path), "UTF-8"));
+
+            for (Object o:  clients) {
+                writer.append(o.toString() + "\r\n");
+            }
+            writer.flush();
+
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+
+    }
+    public static void saveProductToFile(LinkedList<LinkedList<Product>> products) {
+        Writer writer = null;
+        try {
+            writer = new PrintWriter(new OutputStreamWriter(new FileOutputStream("data\\products.txt"), "UTF-8"));
+
+
+            Iterator<LinkedList<Product>> iter1 = products.iterator();
+            while(iter1.hasNext()){
+
+                Iterator<Product> iter2 = iter1.next().iterator();
+                while(iter2.hasNext()){
+                    writer.append(iter2.next().toString() + "\r\n");
+                }
+
+            }
+            writer.flush();
+
+        } catch (IOException ex) {
+            ex.printStackTrace();
         }
     }
 }
