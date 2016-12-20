@@ -109,8 +109,8 @@ public class UIMain extends JFrame{
                         inpPaneObjName.setVisible(false);
                         inpPaneNewDiscount.setVisible(false);
                         inpPaneChangeName.setVisible(false);
-                        panelRadioSortClient.setVisible(true);
-                        panelRadioSortProduct.setVisible(true);
+                        panelRadioSortClient.setVisible(false);
+                        panelRadioSortProduct.setVisible(false);
                         pack();
                         break;
                     }
@@ -136,18 +136,18 @@ public class UIMain extends JFrame{
 
 
 
-//        JPanel inpPanePath = new JPanel();
+//        JPanel inpPanePath
         LabelAndTextField.addLabelAndTextField(listPane, inpPanePath, "Insert the path:", textOut);
 
-//        JPanel inpPaneObjName = new JPanel();
+//        JPanel inpPaneObjName
         LabelAndTextField.addLabelAndTextField(listPane, inpPaneObjName,
                 "Insert object data (ex.: Kozlov A.G. 3.0):", textOut);
 
-//        JPanel inpPaneNewDiscount= new JPanel();
+//        JPanel inpPaneNewDiscount
         LabelAndTextField.addLabelAndTextField(listPane, inpPaneNewDiscount,
                 "Insert new discount:", textOut);
 
-//        JPanel inpPaneChangeName = new JPanel();
+//        JPanel inpPaneChangeName
         LabelAndTextField.addLabelAndTextField(listPane, inpPaneChangeName,
                 "Insert data to change (ex.: Morozov A.G.):", textOut);
 

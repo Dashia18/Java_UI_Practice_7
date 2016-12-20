@@ -16,7 +16,7 @@ public class MyMain {
             String path1 = MyScanner.consoleScanner();//"data\\clients.txt"
             MyScanner.txtScanner(path1);
 
-        //3b - add new oblect to file
+        //3b - add new object to file
             System.out.println("Insert the path:");
             String path2 = MyScanner.consoleScanner();//"data\\clients.txt"
             System.out.println("Insert object data to add:");
@@ -24,6 +24,8 @@ public class MyMain {
             SaveToFile.addToFile(path2,object);
 
 //        //3c - change information in file
+            System.out.println("Insert the path:");
+            String path4 = MyScanner.consoleScanner();//"data\\clients.txt"
             System.out.println("Insert object Secondname to change:");
             String name = MyScanner.consoleScanner();//"Anisimova A.P."
             System.out.println("Insert old discount:");

@@ -1,8 +1,12 @@
 package uiShop;
 
+import uiShop.actionListener.ALChangeName;
+import uiShop.actionListener.ALNewDiscount;
+import uiShop.actionListener.ALObjectData;
+import uiShop.actionListener.ALTextPath;
+
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 /**
@@ -10,7 +14,7 @@ import java.awt.event.ActionListener;
  */
 public class LabelAndTextField {
 
-    public static void addLabelAndTextField(JPanel mainPanel, JPanel currentPanel,
+    public static String addLabelAndTextField(JPanel mainPanel, JPanel currentPanel,
                                             String labelName, JTextArea textOut) {
 
 
@@ -49,11 +53,12 @@ public class LabelAndTextField {
                 break;
             }
         }
-
+        String data = textField.getText();
         textField.setVisible(true);
         textField.setFont(new Font("Arial", Font.PLAIN, 18));
         currentPanel.add(textField);
         mainPanel.add(currentPanel);
-
+        return data;
     }
+
 }
