@@ -28,8 +28,11 @@ public class UIMain extends JFrame{
         JPanel inpPanePath = new JPanel();
         inpPanePath.setVisible(false);
 
-        JPanel inpPaneObjName = new JPanel();
-        inpPaneObjName.setVisible(false);
+        JPanel inpPaneObjAddName = new JPanel();
+        inpPaneObjAddName.setVisible(false);
+
+        JPanel inpPaneObjChangeName = new JPanel();
+        inpPaneObjChangeName.setVisible(false);
 
         JPanel inpPaneNewDiscount = new JPanel();
         inpPaneNewDiscount.setVisible(false);
@@ -49,6 +52,9 @@ public class UIMain extends JFrame{
         JTextArea textOut = new JTextArea(15, 70);
         panelRadio.setVisible(true);
 
+        JPanel inpPaneSaveInFile = new JPanel();
+        inpPaneSaveInFile.setVisible(false);
+
 
         ActionListener aL = new  ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -57,48 +63,56 @@ public class UIMain extends JFrame{
                     case "disploy file data":{
                         textOut.append(name + "\n");
                         inpPanePath.setVisible(true);
-                        inpPaneObjName.setVisible(false);
+                        inpPaneObjAddName.setVisible(false);
+                        inpPaneObjChangeName.setVisible(false);
                         inpPaneNewDiscount.setVisible(false);
                         inpPaneChangeName.setVisible(false);
                         panelRadioSortType.setVisible(false);
                         panelRadioSortClient.setVisible(false);
                         panelRadioSortProduct.setVisible(false);
+                        inpPaneSaveInFile.setVisible(false);
                         pack();
                         break;
                     }
                     case "add new object to file":{
                         textOut.append(name + "\n");
                         inpPanePath.setVisible(true);
-                        inpPaneObjName.setVisible(true);
+                        inpPaneObjAddName.setVisible(true);
+                        inpPaneObjChangeName.setVisible(false);
                         inpPaneNewDiscount.setVisible(false);
                         inpPaneChangeName.setVisible(false);
                         panelRadioSortType.setVisible(false);
                         panelRadioSortClient.setVisible(false);
                         panelRadioSortProduct.setVisible(false);
+                        inpPaneSaveInFile.setVisible(false);
                         pack();
                         break;
                     }
                     case "change information in file":{
                         textOut.append(name + "\n");
                         inpPanePath.setVisible(true);
-                        inpPaneObjName.setVisible(true);
+                        inpPaneObjAddName.setVisible(false);
+                        inpPaneObjChangeName.setVisible(true);
                         inpPaneNewDiscount.setVisible(true);
                         inpPaneChangeName.setVisible(true);
                         panelRadioSortType.setVisible(false);
                         panelRadioSortClient.setVisible(false);
                         panelRadioSortProduct.setVisible(false);
+                        inpPaneSaveInFile.setVisible(false);
                         pack();
                         break;
                     }
                     case "sort file data":{
                         textOut.append(name + "\n");
                         inpPanePath.setVisible(false);
-                        inpPaneObjName.setVisible(false);
+                        inpPaneObjAddName.setVisible(false);
+                        inpPaneObjChangeName.setVisible(false);
                         inpPaneNewDiscount.setVisible(false);
                         inpPaneChangeName.setVisible(false);
                         panelRadioSortType.setVisible(true);
                         panelRadioSortClient.setVisible(false);
                         panelRadioSortProduct.setVisible(false);
+                        inpPaneSaveInFile.setVisible(true);
                         pack();
                         break;
                     }
@@ -115,9 +129,13 @@ public class UIMain extends JFrame{
 //      JPanel inpPanePath
         LabelAndTextField.addLabelAndTextField(mainPane, inpPanePath, "Insert the path:", textOut);
 
-//      JPanel inpPaneObjName
-        LabelAndTextField.addLabelAndTextField(mainPane, inpPaneObjName,
-                "Insert object data (ex.: Kozlov A.G. 3.0):", textOut);
+//      JPanel inpPaneObjAddName
+        LabelAndTextField.addLabelAndTextField(mainPane, inpPaneObjAddName,
+                "Insert object data for add (ex.: Kozlov A.G. 3.0):", textOut);
+
+//      JPanel inpPaneObjChangeName
+        LabelAndTextField.addLabelAndTextField(mainPane, inpPaneObjChangeName,
+                "Insert object data for change (ex.: Kozlov A.G. 3.0):", textOut);
 
 //      JPanel inpPaneNewDiscount
         LabelAndTextField.addLabelAndTextField(mainPane, inpPaneNewDiscount,
@@ -128,6 +146,7 @@ public class UIMain extends JFrame{
                 "Insert data to change (ex.: Morozov A.G.):", textOut);
 
 //      JPanel panelRadioSortType
+        String type;
         ActionListener aL1 = new  ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 String name = ((JRadioButton)e.getSource()).getText();
@@ -136,12 +155,14 @@ public class UIMain extends JFrame{
                         panelRadioSortClient.setVisible(true);
                         panelRadioSortProduct.setVisible(false);
                         textOut.append(name+"\n");
+
                         pack();
                         break;
                     }
                     case "data\\products.txt":{
                         panelRadioSortClient.setVisible(false);
                         panelRadioSortProduct.setVisible(true);
+
                         textOut.append(name+"\n");
                         pack();
                         break;
@@ -153,16 +174,20 @@ public class UIMain extends JFrame{
 //      JPanel panelRadioSortClient
         String clientSortButtonsName = "Choose clients type  of sorting";
         String[] clientsSortType = { "name", "discount"};
-        ActionListener aL2 = ALChooseClientTypeSort.getActionListener(textOut);
+        ActionListener aL2 = ALSortType.getActionListenerS(textOut);
         RadioGroup.addRadioGroup(mainPane,panelRadioSortClient, aL2, clientSortButtonsName,clientsSortType);
 
 //        JPanel panelRadioSortProduct
         String productSortButtonsName = "Choose products type  of sorting";
         String[] productsSortType = {"name", "count", "price"};
-        ActionListener aL3 = ALCHooseProductTypeSort.getActionListener(textOut);
+        ActionListener aL3 = ALSortType.getActionListenerP(textOut);
         RadioGroup.addRadioGroup(mainPane, panelRadioSortProduct,aL3, productSortButtonsName,productsSortType);
 
         ScrolTextArea.addScrollTextArea(mainPane,textOut);
+
+//      JPanel inpPaneSaveInFile
+        LabelAndTextField.addLabelAndTextField(mainPane, inpPaneSaveInFile,
+                "Insert file name to save (ex.: data\\clientsSorted.txt):", textOut);
 
         mainPane.add(Box.createRigidArea(new Dimension(0,5)));
         mainPane.setBorder(BorderFactory.createEmptyBorder(10,10,10,10));

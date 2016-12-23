@@ -1,6 +1,9 @@
 Ivanov O.P. 5.0
-Anisimova A.P. 4.0
+Anisimova A.P. 5.0
 Romanova U.R. 5.0
 Pushkin A.S. 7.0
-Kozlova A.G. 3.0
+Kozlov A.G. 3.0
 Morozov R.T. 2.0
+Golubeva A.I. 5.0
+Doronina S.U. 2.0
+Durakov G.G. 5.0
