@@ -1,5 +1,7 @@
 import dataScanAndSave.*;
 
+import java.util.regex.Pattern;
+
 /**
  * Created by Daria Serebryakova on 09.12.2016.
  */
@@ -33,7 +35,7 @@ public class MyMain {
             System.out.println("Insert new discount:");
             String discountNew = MyScanner.consoleScanner();//"5.0"
 
-                String finalStr1 = DataReplace.discountReplace("data\\clients.txt", name, discountOld,discountNew);
+                String finalStr1 = DataReplace.discountReplace("data\\clients.txt", name, discountOld, discountNew);
                 SaveToFile.saveToFile("data\\clients.txt",finalStr1);
 
             System.out.println("Insert NEW object Secondname to change:");
@@ -63,6 +65,12 @@ public class MyMain {
         String criteria = MyScanner.consoleScanner();//"12.0"
             String nameStrr = DataFilter.filterFileData(path3, criteria);
             SaveToFile.saveToFile("data\\clientsFiltering.txt",nameStrr);
+
+
+
+
+
+
 
     }
 
