@@ -1,9 +1,6 @@
 package uiShop;
 
-import uiShop.actionListeners.ALChangeName;
-import uiShop.actionListeners.ALNewDiscount;
-import uiShop.actionListeners.ALObjectData;
-import uiShop.actionListeners.ALTextPath;
+import uiShop.actionListeners.*;
 
 import javax.swing.*;
 import java.awt.*;
@@ -37,18 +34,28 @@ public class LabelAndTextField {
                 textField.addActionListener(aL);
                 break;
             }
-            case "Insert object data (ex.: Kozlov A.G. 3.0):":{
-                ActionListener aL = ALObjectData.getActionListener(textField, textOut);
+            case "Insert object data for add (ex.: Kozlov A.G. 3.0):":{
+                ActionListener aL = ALAddData.getActionListener(textField, textOut);
+                textField.addActionListener(aL);
+                break;
+            }
+            case "Insert object data for change (ex.: Kozlov A.G. 3.0):":{
+                ActionListener aL = ALParseName.getActionListener(textField, textOut);
                 textField.addActionListener(aL);
                 break;
             }
             case "Insert new discount:":{
-                ActionListener aL = ALNewDiscount.getActionListener(textField, textOut);
+                ActionListener aL = ALChangeDiscount.getActionListener(textField, textOut);
                 textField.addActionListener(aL);
                 break;
             }
             case "Insert data to change (ex.: Morozov A.G.):":{
                 ActionListener aL = ALChangeName.getActionListener(textField, textOut);
+                textField.addActionListener(aL);
+                break;
+            }
+            case "Insert file name to save (ex.: data\\clientsSorted.txt):":{
+                ActionListener aL = ALSaveToFile.getActionListener(textField, textOut);
                 textField.addActionListener(aL);
                 break;
             }
