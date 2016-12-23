@@ -10,10 +10,12 @@ import java.awt.event.ActionListener;
  * Created by Daria Serebryakova on 20.12.2016.
  */
 public class ALTextPath {
+    public static String path;
     public static ActionListener getActionListener(JTextField textPath, JTextArea textOut) {
         ActionListener aL = new  ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 String filePath = textPath.getText();
+                path = filePath;
                 String fileData=  MyScanner.txtScanner(filePath);//    data\clients.txt
                 textOut.append(textPath.getText() + "\n");
                 textOut.append(fileData + "\n");
