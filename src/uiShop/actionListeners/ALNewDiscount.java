@@ -1,4 +1,4 @@
-package uiShop.actionListener;
+package uiShop.actionListeners;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;

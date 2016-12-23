@@ -1,9 +1,9 @@
 package uiShop;
 
-import uiShop.actionListener.ALChangeName;
-import uiShop.actionListener.ALNewDiscount;
-import uiShop.actionListener.ALObjectData;
-import uiShop.actionListener.ALTextPath;
+import uiShop.actionListeners.ALChangeName;
+import uiShop.actionListeners.ALNewDiscount;
+import uiShop.actionListeners.ALObjectData;
+import uiShop.actionListeners.ALTextPath;
 
 import javax.swing.*;
 import java.awt.*;
@@ -58,6 +58,7 @@ public class LabelAndTextField {
         textField.setFont(new Font("Arial", Font.PLAIN, 18));
         currentPanel.add(textField);
         mainPanel.add(currentPanel);
+
         return data;
     }
 
