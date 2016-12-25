@@ -8,7 +8,7 @@ import java.util.LinkedList;
  * Created by Daria Serebryakova on 12.12.2016.
  */
 public class SaveToFile {
-
+    public static String runningMassage;
     //methods for work with file
     public static void saveToFile(String path, String finalStr) {
         FileWriter fw = null;
@@ -22,10 +22,12 @@ public class SaveToFile {
             bw.close();
         } catch (IOException e) {
             isSave = false;
+            runningMassage = "Data didn't saved\n";
             e.printStackTrace();
         }
         if(isSave){
-            System.out.println("Data saved");
+            System.out.println("Data saved\n");
+            runningMassage = "Data saved\n";
         }
     }
     public static void addToFile(String path, String data) {
@@ -38,10 +40,12 @@ public class SaveToFile {
             fileWriter.flush();
         } catch (IOException e) {
             isAdd = false;
+            runningMassage = "Object \"" + data + "\" didn't add\n";
             e.printStackTrace();
         }
         if(isAdd){
-            System.out.println("Object \"" + data + "\" add");
+            System.out.println("Object \"" + data + "\" add\n");
+            runningMassage = "Object \"" + data + "\" add\n";
         }
     }
     public static void changeFile(String path, String data) {
@@ -55,10 +59,12 @@ public class SaveToFile {
 
         } catch (IOException e) {
             isChange = false;
+            runningMassage = "Object \"" + data + "\" didn't changed\n";
             e.printStackTrace();
         }
         if(isChange){
-            System.out.println("Object \"" + data + "\" change");
+            System.out.println("Object \"" + data + "\" changed\n");
+            runningMassage = "Object \"" + data + "\"  changed\n";
         }
     }
 
@@ -75,6 +81,7 @@ public class SaveToFile {
             writer.flush();
 
         } catch (IOException ex) {
+            runningMassage = "list of clients didn't saved";
             ex.printStackTrace();
         }
 
@@ -97,6 +104,7 @@ public class SaveToFile {
             writer.flush();
 
         } catch (IOException ex) {
+            runningMassage = "list of products didn't saved";
             ex.printStackTrace();
         }
     }

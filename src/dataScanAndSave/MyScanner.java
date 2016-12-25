@@ -10,6 +10,7 @@ import java.io.FileNotFoundException;
  * Created by Daria Serebryakova on 12.12.2016.
  */
 public class MyScanner {
+    public static String runningMassage;
 
     public static String txtScanner(String path) {
         String txtFile = "";
@@ -24,15 +25,17 @@ public class MyScanner {
             txtFile = data.toString();
         } catch (FileNotFoundException e){
             isPrint = false;
-            System.out.println("file \"" + path + "\" not found");
-//            e.printStackTrace();
+//            System.out.println("file \"" + path + "\" not found");
+            runningMassage = "file \"" + path + "\" not found ";
+            e.printStackTrace();
         }catch ( Exception ex ) {
             isPrint = false;
             ex.printStackTrace();
         }
 
         if(isPrint){
-            System.out.println("file \"" + path + "\" found \nfile contents:");
+            System.out.println("file \"" + path + "\" found \nfile contents:\n");
+            runningMassage = "file \"" + path + "\" found \n";
             System.out.println(txtFile);
         }
 
@@ -47,6 +50,7 @@ public class MyScanner {
                 strList.add(in.nextLine());
             }
         } catch ( Exception ex ) {
+            runningMassage = "file \"" + path + "\" not found\n";
             ex.printStackTrace();
         }
         return strList;

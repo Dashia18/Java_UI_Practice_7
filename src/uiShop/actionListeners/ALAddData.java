@@ -16,10 +16,15 @@ public class ALAddData {
         ActionListener aL = new  ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 String newObject = textPath.getText();
+                if (newObject.length()==0){
+                    textOut.append("Error: insert object data \n");
+                }
+                else{
+                    textOut.append(textPath.getText() + "\n");
+                    SaveToFile.addToFile(ALTextPath.path,newObject);
+                    textOut.append(SaveToFile.runningMassage);
+                }
 
-
-                textOut.append(textPath.getText() + "\n");
-                SaveToFile.addToFile(ALTextPath.path,newObject);
             }
         };
         return aL;

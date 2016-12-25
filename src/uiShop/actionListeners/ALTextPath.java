@@ -15,10 +15,18 @@ public class ALTextPath {
         ActionListener aL = new  ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 String filePath = textPath.getText();
-                path = filePath;
-                String fileData=  MyScanner.txtScanner(filePath);//    data\clients.txt
-                textOut.append(textPath.getText() + "\n");
-                textOut.append(fileData + "\n");
+                if (filePath.length()==0){
+                    textOut.append("Error: insert path \n");
+                    path = filePath;
+                }
+                else{
+
+                    String fileData=  MyScanner.txtScanner(filePath);//    data\clients.txt
+                    textOut.append(MyScanner.runningMassage);
+                    textOut.append(fileData + "\n");
+                }
+
+
 
             }
         };

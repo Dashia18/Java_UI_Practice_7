@@ -1,6 +1,5 @@
 package uiShop.actionListeners;
 
-import dataScanAndSave.MyScanner;
 import dataScanAndSave.SaveToFile;
 
 import javax.swing.*;
@@ -16,7 +15,14 @@ public class ALSaveToFile {
             public void actionPerformed(ActionEvent e) {
                 String filePath = textPath.getText();
 
-                SaveToFile.saveToFile(filePath,ALSortType.finalStr);
+                if (filePath.length()==0){
+                    textOut.append("Error: insert path to save data \n");
+                }
+                else {
+                    SaveToFile.saveToFile(filePath,ALSortType.finalStr);
+                    textOut.append(SaveToFile.runningMassage);
+                }
+
             }
         };
         return aL;

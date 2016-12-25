@@ -61,7 +61,7 @@ public class UIMain extends JFrame{
                 String name = ((JRadioButton)e.getSource()).getText();
                 switch (name) {
                     case "disploy file data":{
-                        textOut.append(name + "\n");
+                        textOut.append("Type of operation: "+name + "\n");
                         inpPanePath.setVisible(true);
                         inpPaneObjAddName.setVisible(false);
                         inpPaneObjChangeName.setVisible(false);
@@ -75,7 +75,7 @@ public class UIMain extends JFrame{
                         break;
                     }
                     case "add new object to file":{
-                        textOut.append(name + "\n");
+                        textOut.append("Type of operation: "+name + "\n");
                         inpPanePath.setVisible(true);
                         inpPaneObjAddName.setVisible(true);
                         inpPaneObjChangeName.setVisible(false);
@@ -89,7 +89,7 @@ public class UIMain extends JFrame{
                         break;
                     }
                     case "change information in file":{
-                        textOut.append(name + "\n");
+                        textOut.append("Type of operation: "+name + "\n");
                         inpPanePath.setVisible(true);
                         inpPaneObjAddName.setVisible(false);
                         inpPaneObjChangeName.setVisible(true);
@@ -103,7 +103,7 @@ public class UIMain extends JFrame{
                         break;
                     }
                     case "sort file data":{
-                        textOut.append(name + "\n");
+                        textOut.append("Type of operation: "+name + "\n");
                         inpPanePath.setVisible(false);
                         inpPaneObjAddName.setVisible(false);
                         inpPaneObjChangeName.setVisible(false);
@@ -128,6 +128,7 @@ public class UIMain extends JFrame{
 
 //      JPanel inpPanePath
         LabelAndTextField.addLabelAndTextField(mainPane, inpPanePath, "Insert the path:", textOut);
+
 
 //      JPanel inpPaneObjAddName
         LabelAndTextField.addLabelAndTextField(mainPane, inpPaneObjAddName,

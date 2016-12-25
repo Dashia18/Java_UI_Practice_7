@@ -1,6 +1,7 @@
 package uiShop.actionListeners;
 
 import dataScanAndSave.DataReplace;
+import dataScanAndSave.MyScanner;
 import dataScanAndSave.SaveToFile;
 
 import javax.swing.*;
@@ -18,13 +19,21 @@ public class ALChangeDiscount {
             public void actionPerformed(ActionEvent e) {
                 String newData = newDiscount.getText();
                 discountData = newData;
+                if (newData.length()==0){
+                    textOut.append("Error: insert new data \n");
+                }
+                else{
+                    String finalStr1 = DataReplace.discountReplace(ALTextPath.path,
+                            ALParseName.objectName,
+                            ALParseName.objectDiscount,newData);
+                    textOut.append(MyScanner.runningMassage);
+                    textOut.append(ALParseName.objectName + " "+ newData + " is changed\n");
 
-                String finalStr1 = DataReplace.discountReplace(ALTextPath.path,
-                                                               ALParseName.objectName,
-                                                               ALParseName.objectDiscount,newData);
-                textOut.append(ALParseName.objectName + " "+ newData + " is changed\n");
-                SaveToFile.saveToFile(ALTextPath.path,finalStr1);
-                textOut.append(ALParseName.objectName + " "+ newData + " is saved to"+ ALTextPath.path +"\n");
+                    SaveToFile.saveToFile(ALTextPath.path,finalStr1);
+                    textOut.append(SaveToFile.runningMassage);
+                    textOut.append(ALParseName.objectName + " "+ newData + " is saved to"+ ALTextPath.path +"\n");
+                }
+
             }
         };
         return aL;
