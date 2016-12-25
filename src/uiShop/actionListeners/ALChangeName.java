@@ -16,7 +16,7 @@ public class ALChangeName {
         ActionListener aL = new  ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 String newName = textChangeName.getText();
-                
+
                 if (newName.length()==0){
                     textOut.append("Error: insert new data \n");
                 }
