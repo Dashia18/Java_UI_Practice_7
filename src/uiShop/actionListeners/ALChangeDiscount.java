@@ -15,23 +15,22 @@ public class ALChangeDiscount {
     public static String discountData;
 
     public static ActionListener getActionListener(JTextField newDiscount, JTextArea textOut) {
-        ActionListener aL = new  ActionListener() {
+        ActionListener aL = new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 String newData = newDiscount.getText();
                 discountData = newData;
-                if (newData.length()==0){
+                if (newData.length() == 0) {
                     textOut.append("Error: insert new data \n");
-                }
-                else{
+                } else {
                     String finalStr1 = DataReplace.discountReplace(ALTextPath.path,
                             ALParseName.objectName,
-                            ALParseName.objectDiscount,newData);
+                            ALParseName.objectDiscount, newData);
                     textOut.append(MyScanner.runningMassage);
-                    textOut.append(ALParseName.objectName + " "+ newData + " is changed\n");
+                    textOut.append(ALParseName.objectName + " " + newData + " is changed\n");
 
-                    SaveToFile.saveToFile(ALTextPath.path,finalStr1);
+                    SaveToFile.saveToFile(ALTextPath.path, finalStr1);
                     textOut.append(SaveToFile.runningMassage);
-                    textOut.append(ALParseName.objectName + " "+ newData + " is saved to"+ ALTextPath.path +"\n");
+                    textOut.append(ALParseName.objectName + " " + newData + " is saved to" + ALTextPath.path + "\n");
                 }
 
             }

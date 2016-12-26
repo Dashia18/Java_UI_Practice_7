@@ -10,18 +10,18 @@ import java.awt.event.ActionEvent;
 /**
  * Created by Daria Serebryakova on 19.12.2016.
  */
-public class UIMain extends JFrame{
+public class UIMain extends JFrame {
 
-    public UIMain(){
+    public UIMain() {
         super("Stationery shop");
 
         super.setLocation(100, 100);
-        setDefaultCloseOperation( EXIT_ON_CLOSE );
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
 
         JPanel mainPane = new JPanel();
         mainPane.setLayout(new BoxLayout(mainPane, BoxLayout.Y_AXIS));
 
-    //list of elements in the Pane
+        //list of elements in the Pane
         JPanel panelRadio = new JPanel(new GridLayout(0, 1, 0, 5));
         panelRadio.setVisible(true);
 
@@ -56,12 +56,12 @@ public class UIMain extends JFrame{
         inpPaneSaveInFile.setVisible(false);
 
 
-        ActionListener aL = new  ActionListener() {
+        ActionListener aL = new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                String name = ((JRadioButton)e.getSource()).getText();
+                String name = ((JRadioButton) e.getSource()).getText();
                 switch (name) {
-                    case "disploy file data":{
-                        textOut.append("Type of operation: "+name + "\n");
+                    case "disploy file data": {
+                        textOut.append("Type of operation: " + name + "\n");
                         inpPanePath.setVisible(true);
                         inpPaneObjAddName.setVisible(false);
                         inpPaneObjChangeName.setVisible(false);
@@ -74,8 +74,8 @@ public class UIMain extends JFrame{
                         pack();
                         break;
                     }
-                    case "add new object to file":{
-                        textOut.append("Type of operation: "+name + "\n");
+                    case "add new object to file": {
+                        textOut.append("Type of operation: " + name + "\n");
                         inpPanePath.setVisible(true);
                         inpPaneObjAddName.setVisible(true);
                         inpPaneObjChangeName.setVisible(false);
@@ -88,8 +88,8 @@ public class UIMain extends JFrame{
                         pack();
                         break;
                     }
-                    case "change information in file":{
-                        textOut.append("Type of operation: "+name + "\n");
+                    case "change information in file": {
+                        textOut.append("Type of operation: " + name + "\n");
                         inpPanePath.setVisible(true);
                         inpPaneObjAddName.setVisible(false);
                         inpPaneObjChangeName.setVisible(true);
@@ -102,8 +102,8 @@ public class UIMain extends JFrame{
                         pack();
                         break;
                     }
-                    case "sort file data":{
-                        textOut.append("Type of operation: "+name + "\n");
+                    case "sort file data": {
+                        textOut.append("Type of operation: " + name + "\n");
                         inpPanePath.setVisible(false);
                         inpPaneObjAddName.setVisible(false);
                         inpPaneObjChangeName.setVisible(false);
@@ -121,9 +121,9 @@ public class UIMain extends JFrame{
         };
 
         String menuName = "Choose operation";
-        String[] menuButtonsNames = { "disploy file data", "add new object to file",
-                "change information in file", "sort file data" };
-        RadioGroup.addRadioGroup(mainPane,panelRadio, aL, menuName, menuButtonsNames);
+        String[] menuButtonsNames = {"disploy file data", "add new object to file",
+                "change information in file", "sort file data"};
+        RadioGroup.addRadioGroup(mainPane, panelRadio, aL, menuName, menuButtonsNames);
 
 
 //      JPanel inpPanePath
@@ -148,50 +148,53 @@ public class UIMain extends JFrame{
 
 //      JPanel panelRadioSortType
         String type;
-        ActionListener aL1 = new  ActionListener() {
+        ActionListener aL1 = new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                String name = ((JRadioButton)e.getSource()).getText();
-                switch (name){
-                    case "data\\clients.txt":{
+                String name = ((JRadioButton) e.getSource()).getText();
+                switch (name) {
+                    case "data\\clients.txt": {
                         panelRadioSortClient.setVisible(true);
                         panelRadioSortProduct.setVisible(false);
-                        textOut.append(name+"\n");
+                        textOut.append(name + "\n");
 
                         pack();
                         break;
                     }
-                    case "data\\products.txt":{
+                    case "data\\products.txt": {
                         panelRadioSortClient.setVisible(false);
                         panelRadioSortProduct.setVisible(true);
 
-                        textOut.append(name+"\n");
+                        textOut.append(name + "\n");
                         pack();
                         break;
-                    }}}};
-        String fileNameForSort  = "Choose filename for sorting";
-        String[] fileNameType = { "data\\clients.txt", "data\\products.txt"};
-        RadioGroup.addRadioGroup(mainPane,panelRadioSortType, aL1, fileNameForSort,fileNameType);
+                    }
+                }
+            }
+        };
+        String fileNameForSort = "Choose filename for sorting";
+        String[] fileNameType = {"data\\clients.txt", "data\\products.txt"};
+        RadioGroup.addRadioGroup(mainPane, panelRadioSortType, aL1, fileNameForSort, fileNameType);
 
 //      JPanel panelRadioSortClient
         String clientSortButtonsName = "Choose clients type  of sorting";
-        String[] clientsSortType = { "name", "discount"};
+        String[] clientsSortType = {"name", "discount"};
         ActionListener aL2 = ALSortType.getActionListenerS(textOut);
-        RadioGroup.addRadioGroup(mainPane,panelRadioSortClient, aL2, clientSortButtonsName,clientsSortType);
+        RadioGroup.addRadioGroup(mainPane, panelRadioSortClient, aL2, clientSortButtonsName, clientsSortType);
 
 //        JPanel panelRadioSortProduct
         String productSortButtonsName = "Choose products type  of sorting";
         String[] productsSortType = {"name", "count", "price"};
         ActionListener aL3 = ALSortType.getActionListenerP(textOut);
-        RadioGroup.addRadioGroup(mainPane, panelRadioSortProduct,aL3, productSortButtonsName,productsSortType);
+        RadioGroup.addRadioGroup(mainPane, panelRadioSortProduct, aL3, productSortButtonsName, productsSortType);
 
-        ScrolTextArea.addScrollTextArea(mainPane,textOut);
+        ScrolTextArea.addScrollTextArea(mainPane, textOut);
 
 //      JPanel inpPaneSaveInFile
         LabelAndTextField.addLabelAndTextField(mainPane, inpPaneSaveInFile,
                 "Insert file name to save (ex.: data\\clientsSorted.txt):", textOut);
 
-        mainPane.add(Box.createRigidArea(new Dimension(0,5)));
-        mainPane.setBorder(BorderFactory.createEmptyBorder(10,10,10,10));
+        mainPane.add(Box.createRigidArea(new Dimension(0, 5)));
+        mainPane.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
         Container contentPane = getContentPane();
         contentPane.add(mainPane, BorderLayout.AFTER_LAST_LINE);
 
@@ -201,9 +204,9 @@ public class UIMain extends JFrame{
 
 
     public static void main(String[] args) {
-        javax.swing.SwingUtilities.invokeLater(new Runnable(){
-            public void run(){
-                    new UIMain();
+        javax.swing.SwingUtilities.invokeLater(new Runnable() {
+            public void run() {
+                new UIMain();
             }
         });
     }

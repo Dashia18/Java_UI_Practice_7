@@ -10,9 +10,9 @@ public class ScrolTextArea {
     public static void addScrollTextArea(JPanel mainPanel, JTextArea textOut) {
         textOut.setEditable(false);
         textOut.setFont(new Font("Arial", Font.PLAIN, 18));
-        textOut.setBorder(BorderFactory.createTitledBorder("Messages:\n" ));
+        textOut.setBorder(BorderFactory.createTitledBorder("Messages:\n"));
 
-        JScrollPane scroll = new JScrollPane (textOut,
+        JScrollPane scroll = new JScrollPane(textOut,
                 JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
 
         mainPanel.add(scroll);

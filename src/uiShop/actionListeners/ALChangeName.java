@@ -13,15 +13,13 @@ import java.util.regex.Pattern;
  */
 public class ALChangeName {
     public static ActionListener getActionListener(JTextField textChangeName, JTextArea textOut) {
-        ActionListener aL = new  ActionListener() {
+        ActionListener aL = new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 String newName = textChangeName.getText();
 
-                if (newName.length()==0){
+                if (newName.length() == 0) {
                     textOut.append("Error: insert new data \n");
-                }
-                else {
-
+                } else {
                     textOut.append(textChangeName.getText() + "\n");
                     textOut.append(ALParseName.objectName + "\n");
                     textOut.append(newName + "\n");
@@ -32,7 +30,6 @@ public class ALChangeName {
                     textOut.append(SaveToFile.runningMassage);
                     textOut.append(newName + " is saved to" + ALTextPath.path + "\n");
                 }
-
             }
         };
         return aL;

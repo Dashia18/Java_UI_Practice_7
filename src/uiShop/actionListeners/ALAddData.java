@@ -13,15 +13,14 @@ import java.util.regex.Pattern;
 public class ALAddData {
 
     public static ActionListener getActionListener(JTextField textPath, JTextArea textOut) {
-        ActionListener aL = new  ActionListener() {
+        ActionListener aL = new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 String newObject = textPath.getText();
-                if (newObject.length()==0){
+                if (newObject.length() == 0) {
                     textOut.append("Error: insert object data \n");
-                }
-                else{
+                } else {
                     textOut.append(textPath.getText() + "\n");
-                    SaveToFile.addToFile(ALTextPath.path,newObject);
+                    SaveToFile.addToFile(ALTextPath.path, newObject);
                     textOut.append(SaveToFile.runningMassage);
                 }
 

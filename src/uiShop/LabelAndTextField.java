@@ -12,12 +12,10 @@ import java.awt.event.ActionListener;
 public class LabelAndTextField {
 
     public static String addLabelAndTextField(JPanel mainPanel, JPanel currentPanel,
-                                            String labelName, JTextArea textOut) {
-
-
+                                              String labelName, JTextArea textOut) {
 
         currentPanel.setLayout(new BoxLayout(currentPanel, BoxLayout.Y_AXIS));
-        currentPanel.setBorder(BorderFactory.createEmptyBorder(10,10,10,10));
+        currentPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
         JLabel label = new JLabel(labelName);
         label.setVisible(true);
         label.setFont(new Font("Arial", Font.PLAIN, 18));
@@ -26,35 +24,33 @@ public class LabelAndTextField {
 
         JTextField textField = new JTextField();
 
-
-
-        switch (labelName){
-            case "Insert the path:":{
+        switch (labelName) {
+            case "Insert the path:": {
                 ActionListener aL = ALTextPath.getActionListener(textField, textOut);
                 textField.addActionListener(aL);
                 break;
             }
-            case "Insert object data for add (ex.: Kozlov A.G. 3.0):":{
+            case "Insert object data for add (ex.: Kozlov A.G. 3.0):": {
                 ActionListener aL = ALAddData.getActionListener(textField, textOut);
                 textField.addActionListener(aL);
                 break;
             }
-            case "Insert object data for change (ex.: Kozlov A.G. 3.0):":{
+            case "Insert object data for change (ex.: Kozlov A.G. 3.0):": {
                 ActionListener aL = ALParseName.getActionListener(textField, textOut);
                 textField.addActionListener(aL);
                 break;
             }
-            case "Insert new discount:":{
+            case "Insert new discount:": {
                 ActionListener aL = ALChangeDiscount.getActionListener(textField, textOut);
                 textField.addActionListener(aL);
                 break;
             }
-            case "Insert data to change (ex.: Morozov A.G.):":{
+            case "Insert data to change (ex.: Morozov A.G.):": {
                 ActionListener aL = ALChangeName.getActionListener(textField, textOut);
                 textField.addActionListener(aL);
                 break;
             }
-            case "Insert file name to save (ex.: data\\clientsSorted.txt):":{
+            case "Insert file name to save (ex.: data\\clientsSorted.txt):": {
                 ActionListener aL = ALSaveToFile.getActionListener(textField, textOut);
                 textField.addActionListener(aL);
                 break;
